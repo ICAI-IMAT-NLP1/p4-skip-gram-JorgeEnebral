@@ -24,9 +24,9 @@ def main():
     epochs = 6
     learning_rate = 0.003
     window_size = 7
-    print_every = 2000
+    print_every = 1500
     runs_folder = "runs"  # Folder to save models
-    model_filename = "skipgram_model.pth"  # Filename to save the model
+    model_filename = "skipgram_model_1.pth"  # Filename to save the model
     model_path = os.path.join(runs_folder, model_filename)  # Full path to the model
     train_model = False
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -71,7 +71,7 @@ def main():
         print('Model Loaded.')
         print("Step 4: Visualizing the word embeddings...")
 
-    plot_embeddings(model, int_to_vocab, viz_words=1000)
+    plot_embeddings(model, int_to_vocab, viz_words=2000)
     print("Visualization complete.")
 
 

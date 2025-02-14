@@ -1,5 +1,5 @@
 En plot de los embedings podemos ver los puntos agrupados en torno a circunferencias concéntricas, y es las circunferencias agrupados más o menos en clusters.
 
-Arriba a la derecha se ve la palabra "ancient" y abajo a la izquierda "recent", claramente opuestas.
+Sobre (0.9, -1.6) se ve que "european" y "laws" están muy juntas, que tiene todo el sentido, ya que la Unión Europea solo hace mas que regular.
 
 En el centro tenemos la mayoría de palabras neutras, que no tienen antónimos.

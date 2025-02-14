@@ -148,7 +148,9 @@ def cosine_similarity(embedding: torch.nn.Embedding, valid_size: int = 16, valid
     Note:
         sim = (a . b) / |a||b| where `a` and `b` are embedding vectors.
     """
-    valid_examples: torch.Tensor = torch.randint(0, valid_window, (valid_size,), dtype=torch.long, device=device)
+    num_embeddings = embedding.num_embeddings  
+    start_index = torch.randint(0, num_embeddings - valid_window, (1,), device=device).item()
+    valid_examples: torch.Tensor = torch.randint(start_index, start_index + valid_window, (valid_size,), dtype=torch.long, device=device)
     valid_embeddings: torch.Tensor = embedding(valid_examples)  # Shape: (valid_size, embedding_dim)
     
     # Normalize the word vectors (L2 norm)

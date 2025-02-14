@@ -62,7 +62,6 @@ def train_skipgram(model: SkipGramNeg,
             if steps % print_every == 0:
                 print(f"Epoch: {epoch+1}/{epochs}, Step: {steps}, Loss: {loss.item()}")
                 # Cosine similarity
-                # TODO
                 valid_examples, valid_similarities = cosine_similarity(model.in_embed, device=device)
                 _, closest_idxs = valid_similarities.topk(6)
 
