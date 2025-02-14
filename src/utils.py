@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import torch
 from sklearn.manifold import TSNE
 import os
+import numpy as np
+
 
 def tokenize(text: str) -> List[str]:
 
@@ -41,7 +43,7 @@ def plot_embeddings(model, int_to_vocab, viz_words=400, figsize=(16, 16)):
     """
     # Extract embeddings
     embeddings = model.in_embed.weight.to('cpu').data.numpy()
-    
+
     # Reduce the dimensionality of embeddings with t-SNE
     tsne = TSNE()
     embed_tsne = tsne.fit_transform(embeddings[:viz_words, :])

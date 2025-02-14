@@ -1,0 +1,5 @@
+En plot de los embedings podemos ver los puntos agrupados en torno a circunferencias concéntricas, y es las circunferencias agrupados más o menos en clusters.
+
+Arriba a la derecha se ve la palabra "ancient" y abajo a la izquierda "recent", claramente opuestas.
+
+En el centro tenemos la mayoría de palabras neutras, que no tienen antónimos.

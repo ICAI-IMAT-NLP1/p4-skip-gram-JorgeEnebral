@@ -2,6 +2,7 @@ import torch
 import pytest
 from src.skipgram import SkipGramNeg, NegativeSamplingLoss  
 
+
 @pytest.mark.order(7)
 def test_skipgramneg_init():
     n_vocab = 100
@@ -19,6 +20,7 @@ def test_skipgramneg_init():
     assert model.in_embed.num_embeddings == n_vocab, "Input embedding vocabulary size is incorrect."
     assert model.out_embed.num_embeddings == n_vocab, "Output embedding vocabulary size is incorrect."
 
+
 @pytest.mark.order(8)
 def test_forward_input():
     n_vocab = 100
@@ -28,6 +30,7 @@ def test_forward_input():
 
     input_vectors = model.forward_input(input_words)
     assert input_vectors.shape == (10, n_embed), "Input vectors shape is incorrect."
+
 
 @pytest.mark.order(9)
 def test_forward_output():
@@ -42,6 +45,7 @@ def test_forward_output():
         pytest.skip()
 
     assert output_vectors.shape == (10, n_embed), "Output vectors shape is incorrect."
+
 
 @pytest.mark.order(10)
 def test_forward_noise():
@@ -58,6 +62,7 @@ def test_forward_noise():
 
     expected_shape = (batch_size, n_samples, n_embed)
     assert noise_vectors.shape == expected_shape, "Noise vectors shape is incorrect."
+
 
 @pytest.mark.order(11)
 def test_negative_sampling_loss_forward():

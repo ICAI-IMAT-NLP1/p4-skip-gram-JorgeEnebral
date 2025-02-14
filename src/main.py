@@ -11,6 +11,7 @@ except:
     from src.train import train_skipgram
     from utils import plot_embeddings, save_model
 
+
 def main():
     print("Starting the SkipGram training pipeline...")
 
@@ -18,16 +19,16 @@ def main():
     file_path = 'data/text8'  # Adjust the path to where your text8 dataset is stored
     print(f"File path set to {file_path}")
     
-    embedding_dim = 300
-    batch_size = 512
-    epochs = 5
+    embedding_dim = 200
+    batch_size = 1024
+    epochs = 6
     learning_rate = 0.003
-    window_size = 5
-    print_every = 1500
+    window_size = 7
+    print_every = 2000
     runs_folder = "runs"  # Folder to save models
     model_filename = "skipgram_model.pth"  # Filename to save the model
     model_path = os.path.join(runs_folder, model_filename)  # Full path to the model
-    train_model = True
+    train_model = False
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     print("Step 1: Loading and preprocessing data...")
@@ -70,8 +71,9 @@ def main():
         print('Model Loaded.')
         print("Step 4: Visualizing the word embeddings...")
 
-    plot_embeddings(model, int_to_vocab, viz_words=400)
+    plot_embeddings(model, int_to_vocab, viz_words=1000)
     print("Visualization complete.")
+
 
 if __name__ == "__main__":
     main()

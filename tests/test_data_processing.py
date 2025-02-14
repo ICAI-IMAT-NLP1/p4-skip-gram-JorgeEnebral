@@ -32,6 +32,7 @@ def test_load_and_preprocess_data():
     # Validate the first few tokens match expected results
     assert examples[:len(expected_results)] == expected_results
 
+
 @pytest.mark.order(2)
 def test_create_lookup_tables():
     # Given a list of sample words
@@ -53,6 +54,7 @@ def test_create_lookup_tables():
 @pytest.fixture
 def vocab_to_int():
     return {"apple": 0, "banana": 1, "cherry": 2, "date": 3}
+
 
 @pytest.mark.order(3)
 def test_subsample_words(vocab_to_int):
@@ -124,6 +126,8 @@ def test_get_batches():
 
     # Additional checks can be made for the contents of inputs and targets
     # to ensure context windows are correctly implemented.
+
+
 @pytest.mark.order(6)
 def test_cosine_similarity():
     # Create a simple embedding matrix for testing: 1000 embeddings of size 10
